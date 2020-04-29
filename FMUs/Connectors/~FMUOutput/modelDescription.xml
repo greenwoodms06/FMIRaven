@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="FMIRaven_Models_LorenzSystem_Connectors"
+  guid="{2830c79a-6b88-4053-ac96-4bcc0e962b85}"
+  generationTool="Dymola Version 2020x (64-bit), 2019-10-10 (using Dassl with tolerance 0.0001)"
+  generationDateAndTime="2020-02-28T18:52:35Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="0">
+  <CoSimulation
+    modelIdentifier="FMIRaven_Models_LorenzSystem_Connectors"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canBeInstantiatedOnlyOncePerProcess="true"
+    canNotUseMemoryManagementFunctions="true"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true"
+    providesDirectionalDerivative="true"/>
+  <TypeDefinitions>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealInput">
+      <Real/>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="100.0"
+    tolerance="0.0001"/>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="x_start"
+      valueReference="16777216"
+      description="Initial x-coordinate"
+      causality="parameter"
+      variability="fixed">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="y_start"
+      valueReference="16777217"
+      description="Initial y-coordinate"
+      causality="parameter"
+      variability="fixed">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="z_start"
+      valueReference="16777218"
+      description="Initial z-coordinate"
+      causality="parameter"
+      variability="fixed">
+      <Real start="1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="x"
+      valueReference="33554432"
+      description="x-coordinate">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="der(x)"
+      valueReference="587202560"
+      description="der(x-coordinate)">
+      <Real derivative="4"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="y"
+      valueReference="33554433"
+      description="y-coordinate">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="der(y)"
+      valueReference="587202561"
+      description="der(y-coordinate)">
+      <Real derivative="6"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="z"
+      valueReference="33554434"
+      description="z-coordinate">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="der(z)"
+      valueReference="587202562"
+      description="der(z-coordinate)">
+      <Real derivative="8"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="sigma"
+      valueReference="352321536"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="rho"
+      valueReference="352321537"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="beta"
+      valueReference="352321538"
+      causality="input">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealInput"
+        start="0.0"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Derivatives>
+      <Unknown index="5"
+        dependencies="4 6 10"
+        dependenciesKind="dependent dependent dependent"/>
+      <Unknown index="7"
+        dependencies="4 6 8 11"
+        dependenciesKind="dependent fixed dependent dependent"/>
+      <Unknown index="9"
+        dependencies="4 6 8 12"
+        dependenciesKind="dependent dependent dependent dependent"/>
+    </Derivatives>
+    <InitialUnknowns>
+      <Unknown index="4"
+        dependencies="1"
+        dependenciesKind="dependent"/>
+      <Unknown index="5"
+        dependencies="1 2 10"
+        dependenciesKind="dependent dependent dependent"/>
+      <Unknown index="6"
+        dependencies="2"
+        dependenciesKind="dependent"/>
+      <Unknown index="7"
+        dependencies="1 2 3 11"
+        dependenciesKind="dependent dependent dependent dependent"/>
+      <Unknown index="8"
+        dependencies="3"
+        dependenciesKind="dependent"/>
+      <Unknown index="9"
+        dependencies="1 2 3 12"
+        dependenciesKind="dependent dependent dependent dependent"/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>
